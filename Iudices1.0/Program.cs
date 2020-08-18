@@ -10,12 +10,15 @@ namespace Iudices1._0
     {
         static void Main(string[] args)
         {
-            // The code provided will print ‘Hello World’ to the console.
-            // Press Ctrl+F5 (or go to Debug > Start Without Debugging) to run your app.
-            Console.WriteLine("Hello World!");
-            Console.ReadKey();
-
-            // Go to http://aka.ms/dotnet-get-started-console to continue learning how to build a console app! 
+            Console.WriteLine("Please enter the number of Jurors need for this pool:");
+            string temp = Console.ReadLine();
+            int numberOfJurors = int.Parse(temp);
+            var rand = new Random();
+            //This will out put rosterIDs to be run against the DB Currently displays them to console 
+            for (int ctr = 1; ctr <= numberOfJurors; ctr++)
+                Console.WriteLine("{0,8:N0}", rand.Next(2001));
+            Console.ReadLine();
+            
         }
     }
 }
