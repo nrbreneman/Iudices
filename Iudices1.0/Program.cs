@@ -15,30 +15,41 @@ namespace Iudices1._0
 
             Console.WriteLine("Please enter the number of Jurors need for this pool:");
             string temp = Console.ReadLine();
-            int numberOfJurors = int.Parse(temp);
-            int jurorID;
-            List<Juror> Pool = new List<Juror>();
-            JurySQLDAO juryDAO = new JurySQLDAO();
-            int numberOfRows = juryDAO.GetRows();
-            var rand = new Random();
-            for (int i = 0; i < numberOfJurors; i++)
-            {                
-                jurorID = rand.Next(numberOfRows);                
-                Juror juror = new Juror();
-                juror = juryDAO.GetJuror(jurorID);
-                Pool.Add(juror);
-            }
-            Console.WriteLine();
-            Console.WriteLine("Jury Pool:");
-            Console.WriteLine();
-
-            foreach (Juror juror in Pool)
+            int numberOfJurors;
+            bool success = Int32.TryParse(temp, out numberOfJurors);
+            if (success)
             {
-                Console.WriteLine(juror.firstName + " " + juror.lastName);
-                Console.WriteLine(juror.streetAddress);
-                Console.WriteLine(juror.city + ", " + juror.state + " " + juror.zipcode);
+                numberOfJurors = int.Parse(temp);
+                int jurorID;
+                JuryPool juryPool = new JuryPool();
+                JurySQLDAO juryDAO = new JurySQLDAO();
+                RandomID randomID = new RandomID();
+                int numberOfRows = juryDAO.GetRows();
+
+                for (int i = 0; i < numberOfJurors; i++)
+                {
+                    jurorID = randomID.getRandomID(numberOfRows);
+                    Juror juror = new Juror();
+                    juror = juryDAO.GetJuror(jurorID);
+                    juryPool.Pool.Add(juror);
+                }
                 Console.WriteLine();
+                Console.WriteLine("Jury Pool:");
+                Console.WriteLine();
+
+                foreach (Juror juror in juryPool.Pool)
+                {
+                    Console.WriteLine(juror.firstName + " " + juror.lastName);
+                    Console.WriteLine(juror.streetAddress);
+                    Console.WriteLine(juror.city + ", " + juror.state + " " + juror.zipcode);
+                    Console.WriteLine();
+                }
             }
+            else
+            {
+                Console.WriteLine("Please enter a valid whole number");
+            }
+
 
 
 

@@ -45,6 +45,7 @@
     <Compile Include="DAL\JurySQLDAO.cs" />
     <Compile Include="Models\Juror.cs" />
     <Compile Include="Models\JuryPool.cs" />
+    <Compile Include="Models\RandomID.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
