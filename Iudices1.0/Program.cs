@@ -20,7 +20,7 @@ namespace Iudices1._0
             if (success)
             {
                 numberOfJurors = int.Parse(temp);
-                int jurorID;
+                
                 JuryPool juryPool = new JuryPool();
                 JurySQLDAO juryDAO = new JurySQLDAO();
                 RandomID randomID = new RandomID();
@@ -28,9 +28,9 @@ namespace Iudices1._0
 
                 for (int i = 0; i < numberOfJurors; i++)
                 {
-                    jurorID = randomID.getRandomID(numberOfRows);
+                    
                     Juror juror = new Juror();
-                    juror = juryDAO.GetJuror(jurorID);
+                    juror = juryDAO.GetJuror(randomID.getRandomID(numberOfRows));
                     juryPool.Pool.Add(juror);
                 }
                 Console.WriteLine();
