@@ -43,7 +43,7 @@ namespace Iudices2._0
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             //services.AddScoped<IAuthProvider, SessionAuthProvider>();
-            services.AddTransient<JurySQLDAO>(m => new JurySQLDAO(connectionString));
+            //services.AddTransient<JurySQLDAO>(m => new JurySQLDAO(connectionString));
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);

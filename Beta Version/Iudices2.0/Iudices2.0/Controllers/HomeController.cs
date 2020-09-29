@@ -10,15 +10,18 @@ namespace Iudices2._0.Controllers
 {
     public class HomeController : Controller
     {
-        private JurySQLDAO jurySQLDAO;
+        //private JurySQLDAO jurySQLDAO; figure out why this isnt working 
 
         public IActionResult Index()
         {
             return View();
         }
 
+        [HttpPost]
         public IActionResult ListPool(int numberOfJurors)
         {
+            /*numberOfJurors = 7;*/ //added temp data to ensure working code 
+            JurySQLDAO jurySQLDAO = new JurySQLDAO();
             JuryPool jury = new JuryPool();
             int rows = jurySQLDAO.GetRows();
             RandomID randomID = new RandomID();
