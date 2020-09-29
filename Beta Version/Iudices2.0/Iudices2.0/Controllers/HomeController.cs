@@ -12,15 +12,18 @@ namespace Iudices2._0.Controllers
     {
         //private JurySQLDAO jurySQLDAO; figure out why this isnt working 
 
+            
         public IActionResult Index()
         {
-            return View();
+            NumJuror model = new NumJuror();
+            return View(model);
         }
 
-        [HttpPost]
-        public IActionResult ListPool(int numberOfJurors)
+        [HttpGet]
+        public IActionResult ListPool(NumJuror numJuror)
         {
             /*numberOfJurors = 7;*/ //added temp data to ensure working code 
+            int numberOfJurors = numJuror.numberOfJurors;
             JurySQLDAO jurySQLDAO = new JurySQLDAO();
             JuryPool jury = new JuryPool();
             int rows = jurySQLDAO.GetRows();

@@ -1,15 +1,15 @@
-﻿
+﻿@model Iudices2._0.Models.NumJuror
 @{
     ViewData["Title"] = "Index";
 }
 
 <h2>Jury Selection Portal</h2>
 <p>Please enter the number of jurors need for this pool:</p>
-<form asp-controller ="Home" asp-action="ListPool" method="post">
+<form asp-controller="Home" asp-action="ListPool" method="get">
     <p>
         <input type="number" asp-for="numberOfJurors" />
     </p>
-    <input type="button" value="Submit" />
+    <input type="submit" value="Submit" />
 </form>
 
 

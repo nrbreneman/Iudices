@@ -7,6 +7,7 @@ namespace Iudices2._0.Models
 {
     public class RandomID
 {
+        public int ID;
     private Random rand = new Random();
     public int getRandomID(int numberOfRows)
     {
