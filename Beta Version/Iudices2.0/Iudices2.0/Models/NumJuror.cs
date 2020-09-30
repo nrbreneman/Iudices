@@ -7,6 +7,6 @@ namespace Iudices2._0.Models
 {
     public class NumJuror
 {
-        public int numberOfJurors;
+        public int numberOfJurors { get; set; }
 }
 }

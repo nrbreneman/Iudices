@@ -8,16 +8,20 @@ using System.Threading.Tasks;
 namespace Iudices2._0.DAL
 {
     public class JurySQLDAO
-{
+    {
         private readonly string connectionString = (@"Server=.\SQLEXPRESS;Database=Jury;Trusted_Connection=True;");
-       
+
         private readonly string GetJurorSQL = "SELECT * FROM Roster where rosterID = @ID;";
         private readonly string GetRowsSQL = "Select COUNT(rosterID) FROM roster";
 
-        //public JurySQLDAO(string connectionString)
-        //{
-        //    this.connectionString = connectionString;
-        //}
+        public JurySQLDAO(string connectionString)
+        {
+            this.connectionString = connectionString;
+        }
+
+        public JurySQLDAO()
+        {
+        }
 
         public int GetRows()
         {

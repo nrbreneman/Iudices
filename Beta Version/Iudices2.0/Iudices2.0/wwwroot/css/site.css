@@ -1,37 +1,210 @@
-/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification 
-for details on configuring this project to bundle and minify static web assets. */
 body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
 }
 
-/* Carousel */
-.carousel-caption p {
+#logo {
+    max-width: 100%;
+}
+
+#footer {
+    max-width: 100%;
+}
+
+.page-info {
+    margin-left: 15%;
+    margin-right: 15%;
+    background-color: white;
+    padding: 20px;
+}
+
+    .page-info h2 {
+        font-size: 200%;
+        color: #233772;
+    }
+
+    .page-info h3 {
+        color: red;
+        font-size: 20px;
+    }
+
+.homepage-links {
+    border-left: 3px solid #233772;
+    list-style: none;
+    text-decoration: none;
+    color: #233772;
+}
+
+    .homepage-links a {
+        list-style: none;
+        text-decoration: none;
+        color: #233772;
+    }
+
+        .homepage-links a:hover {
+            text-decoration: underline;
+            color: dimgray;
+            font-size: 18px;
+        }
+
+.table-links {
+    list-style: none;
+    text-decoration: none;
+    color: #ee2e29;
+    padding: 10px;
+    font-weight: bold;
+}
+
+    .table-links:hover {
+        text-decoration: underline;
+        color: dimgray;
+    }
+
+.extra-links {
+    list-style: none;
+    text-decoration: none;
+    color: #233772;
+    padding: 10px;
+}
+
+    .extra-links a {
+        list-style: none;
+        text-decoration: none;
+    }
+
+    .extra-links:hover {
+        text-decoration: underline;
+        color: dimgray;
+    }
+
+nav {
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    width: 99%;
+    background-color: lightgrey;
+    border: 5px solid #233772;
+}
+
+    nav ul {
+        padding-left: 15%;
+    }
+
+    nav li {
+        display: inline;
+    }
+
+.nav-buttons {
+    background-color: lightgrey;
+    color: #ee2e29;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
     font-size: 20px;
-    line-height: 1.4;
+    cursor: pointer;
+    width: 130px;
+    margin: 5px;
 }
 
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
+    .nav-buttons:hover {
+        background-color: white;
+    }
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+    .buttons div {
+        padding-right: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+input[type=email], input[type=password], input[type=text], input[class=input] {
+    background-color: white;
+    border: 2px solid #233772;
+    padding: 10px;
+}
+
+input[type=button], input[type=submit] {
+    background-color: lightgray;
+    border: 2px solid #233772;
+    padding: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-right: 15px;
+    margin-bottom: 20px;
+}
+
+    input[type=button]:hover, input[type=submit]:hover {
+        background-color: white;
+    }
+
+.dropbtn {
+    background-color: lightgray;
+    color: black;
+    padding: 16px;
+    font-size: 14px;
+    border: 2px solid #233772;
+    cursor: pointer;
+    border-left: 3px solid #233772;
+}
+
+    .dropbtn:hover {
+        background-color: white;
+        display: block;
+    }
+
+table {
+    border-collapse: collapse;
+    border: 2px solid #233772;
+    margin-bottom: 20px;
+    table-layout: auto;
     width: 100%;
 }
 
-/* QR code generator */
-#qrCode {
-    margin: 15px;
+tr {
+    text-align: left;
 }
 
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
-        display: none;
+th {
+    border: 2px solid #233772;
+    padding: 10px;
+    background-color: lightgray;
+}
+
+td {
+    border: 2px solid #233772;
+    padding: 10px;
+}
+
+ul {
+    list-style: none;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+}
+
+    .flex div {
+        margin-right: 70px;
     }
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    bottom: 0;
+    position: relative;
+    color: dimgray;
 }

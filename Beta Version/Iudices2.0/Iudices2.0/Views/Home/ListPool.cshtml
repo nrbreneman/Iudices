@@ -5,26 +5,21 @@
 }
 
 <h2>Selected Pool:</h2>
-<table>
+<table class="team-table">
     <tr>
-        <th>First Name</th>
         <th>Last Name</th>
+        <th>First Name</th>        
         <th> Address</th>
-        <th>City</th>
-        <th>State</th>
-        <th>Zip</th>
+
     </tr>
     @foreach (Juror juror in Model.Pool)
     {
         <tr>
-            <td>@juror.firstName</td>
             <td>@juror.lastName</td>
+            <td>@juror.firstName</td>            
             <td>@juror.streetAddress</td>
-            <td>@juror.city</td>
-            <td>@juror.state</td>
-            <td>@juror.zipcode</td>
-
-        </tr>
+            <td>@juror.city, @juror.state @juror.zipcode</td>
+         </tr>
     }
 
 </table>
