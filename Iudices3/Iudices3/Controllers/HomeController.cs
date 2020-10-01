@@ -23,33 +23,8 @@ namespace Iudices3.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            NumJuror model = new NumJuror();
-            return View(model);
-        }
-
-        [HttpPost]
-        public IActionResult Index(NumJuror model)
-        {
-            return RedirectToAction("ListPool", model);
-        }
-
-        [HttpGet]
-        public IActionResult ListPool(NumJuror model)
-        {
-
-            int numberOfJurors = model.numberOfJurors;
-            JurySQLDAO jurySQLDAO = new JurySQLDAO();
-            JuryPool jury = new JuryPool();
-            int rows = jurySQLDAO.GetRows();
-            RandomID randomID = new RandomID();
-            for (int i = 0; i < numberOfJurors; i++)
-            {
-                Juror juror = new Juror();
-                juror = jurySQLDAO.GetJuror(randomID.getRandomID(rows));
-                jury.Pool.Add(juror);
-            }
-
-            return View(jury);
+            
+            return View();
         }
 
         public IActionResult About()

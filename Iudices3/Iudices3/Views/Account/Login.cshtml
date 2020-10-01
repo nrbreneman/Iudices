@@ -1,0 +1,28 @@
+﻿@model Iudices3.Models.Account.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h2>Login</h2>
+
+<form asp-controller="Account" asp-action="Login" method="post">
+    <div class="Login">
+        <p>
+            <label asp-for="Email"></label>
+        </p>
+        <p>
+            <input type="text" asp-for="Email" class="input" placeholder="enter email address" />
+            <span asp-validation-for="Email"></span>
+        </p>
+        <p>
+            <label asp-for="Password"></label>
+        </p>
+        <p>
+            <input type="password" asp-for="Password" class="input" placeholder="enter password" />
+            <span asp-validation-for="Password"></span>
+        </p>
+        <p>Not a member yet? Register <a asp-controller="Account" asp-action="Register">here</a>!</p>
+    </div>
+    <input type="submit" value="Login" class="btn btn-default" />
+</form>
+

@@ -6,7 +6,7 @@ using Iudices3.Models;
 
 namespace Iudices3.DAL
 {
-    interface IUserDAL
+    public interface IUserDAL
     {
         User GetUser(string username);
 
