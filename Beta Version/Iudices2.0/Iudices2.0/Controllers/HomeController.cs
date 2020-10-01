@@ -23,22 +23,23 @@ namespace Iudices2._0.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            NumJuror model = new NumJuror();
+            return View(model);
         }
 
         [HttpPost]
-        public IActionResult Index(NumJuror numberOfJurors)
+        public IActionResult Index(NumJuror numJuror)
         {
-            return RedirectToAction("ListPool", numberOfJurors.numberOfJurors);
+            return RedirectToAction("ListPool", numJuror.numberOfJurors);
         }
 
         [HttpGet]
         public IActionResult ListPool(int numberOfJurors)
         {
-            //added temp data to ensure working code 
+            //added temp data to ensure working code numberOfJurors = 7;
             //int numberOfJurors = numJuror.numberOfJurors;
             JurySQLDAO jurySQLDAO = new JurySQLDAO();
-            JuryPool jury = new JuryPool();numberOfJurors = 7; 
+            JuryPool jury = new JuryPool(); 
             int rows = jurySQLDAO.GetRows();
             RandomID randomID = new RandomID();
             for (int i = 0; i < numberOfJurors; i++)
