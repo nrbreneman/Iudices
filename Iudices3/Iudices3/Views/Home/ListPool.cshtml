@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewData["Title"] = "JuryPool";
+}
+
+<h2>Selected Pool:</h2>
+<table class="team-table">
+    <tr>
+        <th>Last Name</th>
+        <th>First Name</th>
+        <th> Address</th>
+
+    </tr>
+    @foreach (Juror juror in Model.Pool)
+    {
+        <tr>
+            <td>@juror.lastName</td>
+            <td>@juror.firstName</td>
+            <td>
+                <p>@juror.streetAddress </p>
+                <p>@juror.city, @juror.state @juror.zipcode</p>
+            </td>
+
+        </tr>
+    }
+
+</table>
+

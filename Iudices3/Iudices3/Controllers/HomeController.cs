@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using Iudices2._0.DAL;
-using Iudices2._0.Models;
-using Iudices2._0.Providers.Auth;
 using Microsoft.AspNetCore.Mvc;
+using Iudices3.Models;
+using Iudices3.DAL;
 
-namespace Iudices2._0.Controllers
+namespace Iudices3.Controllers
 {
     public class HomeController : Controller
     {
@@ -28,18 +28,18 @@ namespace Iudices2._0.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(NumJuror numJuror)
+        public IActionResult Index(NumJuror model)
         {
-            return RedirectToAction("ListPool", numJuror.numberOfJurors);
+            return RedirectToAction("ListPool", model);
         }
 
         [HttpGet]
-        public IActionResult ListPool(int numberOfJurors)
+        public IActionResult ListPool(NumJuror model)
         {
-            //added temp data to ensure working code numberOfJurors = 7;
-            //int numberOfJurors = numJuror.numberOfJurors;
+
+            int numberOfJurors = model.numberOfJurors;
             JurySQLDAO jurySQLDAO = new JurySQLDAO();
-            JuryPool jury = new JuryPool(); 
+            JuryPool jury = new JuryPool();
             int rows = jurySQLDAO.GetRows();
             RandomID randomID = new RandomID();
             for (int i = 0; i < numberOfJurors; i++)
@@ -50,6 +50,31 @@ namespace Iudices2._0.Controllers
             }
 
             return View(jury);
+        }
+
+        public IActionResult About()
+        {
+            ViewData["Message"] = "Your application description page.";
+
+            return View();
+        }
+
+        public IActionResult Contact()
+        {
+            ViewData["Message"] = "Your contact page.";
+
+            return View();
+        }
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

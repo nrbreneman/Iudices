@@ -1,0 +1,13 @@
+Need to be able to seperate each juror by either zip code or state. Should we sort the database 
+and only have it search the database related to that state or should we import everyone from that state 
+to a list and sort for there?
+
+
+Auth provider still needs made.
+
+Privacy Policy 
+
+new email address 
+
+Create Landing page for log in behind secure fire wall 
+
