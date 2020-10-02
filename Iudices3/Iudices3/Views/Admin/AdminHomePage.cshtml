@@ -1,7 +1,7 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿
+@{
+    ViewData["Title"] = "AdminHomePage";
 }
-@model NumJuror
 
 @{
     if (DateTime.Now.Hour < 12 && DateTime.Now.Hour >= 0)
@@ -17,10 +17,4 @@
         <h2>Good Evening!</h2>
     }
 }
-<p>Please enter the number of jurors need for this pool:</p>
-<form asp-controller="User" asp-action="GetNumber" method="post">
-    <p>
-        <input type="number" asp-for="numberOfJurors">
-    </p>
-    <input type="submit" value="Submit">
-</form>
+

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Iudices3.DAL;
 using Iudices3.Models;
+using Iudices3.Providers.Auth;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Iudices3.Controllers
@@ -16,6 +17,7 @@ namespace Iudices3.Controllers
         }
 
         [HttpGet]
+        //[AuthorizationFilter("User")]
         public IActionResult GetNumber()
         {
             NumJuror model = new NumJuror();
@@ -23,12 +25,14 @@ namespace Iudices3.Controllers
         }
 
         [HttpPost]
+        //[AuthorizationFilter("User")]
         public IActionResult GetNumber(NumJuror model)
         {
             return RedirectToAction("ListPool", model);
         }
 
         [HttpGet]
+        //[AuthorizationFilter("User")]
         public IActionResult ListPool(NumJuror model)
         {
 

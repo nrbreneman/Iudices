@@ -16,12 +16,5 @@ namespace Iudices3.DAL
 
         void DeleteUser(User user);
 
-        List<User> GetAllUnapprovedUsers();
-
-        User GetUserTemp(string username);
-
-        void DeleteUserTemp(User user);
-
-        void AdminApproveUser(User user);
     }
 }
