@@ -12,7 +12,7 @@ namespace Iudices3.DAL
 
         private readonly string connectionString;
         private readonly string CreateAdminSQL = "INSERT INTO Users(username, password, salt, role) VALUES (@username, @password, @salt, Admin); ";
-        private readonly string CreateUserSQL = "INSERT INTO Users(username, password, salt, role) VALUES (@username, @password, @salt, User); ";
+        private readonly string CreateUserSQL = "INSERT INTO Users(username, password, salt) VALUES (@username, @password, @salt); ";
         private readonly string DeleteUserSQL = "DELETE FROM Users WHERE id = @id; ";
         private readonly string CreateJurorSQL = "INSERT INTO Roster(firstName, lastName, streetAddress, city, stateABV, zipcode) VALUES (@firstName, @lastName , @streetAddress, @city, @stateABV, @zipcode);";
         private readonly string DeleteJurorSQL = "Delete from roster where rosterID = @id";

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Iudices3.Providers.Auth
 {
-    interface IAuthProvider
+    public interface IAuthProvider
     {
         /// <summary>
         /// Returns true if a current user is logged in.

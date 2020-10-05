@@ -6,38 +6,35 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Iudices3.Models;
 using Iudices3.DAL;
+using Iudices3.Providers.Auth;
 
 namespace Iudices3.Controllers
 {
     public class HomeController : Controller
     {
-        //private JurySQLDAO jurySQLDAO;
-        //private IAuthProvider authProvider;
+        private JurySQLDAO jurySQLDAO;
+        private IAuthProvider authProvider;
 
-        //public HomeController(IAuthProvider authProvider, JurySQLDAO jurySQLDAO)
-        //{
-        //    this.jurySQLDAO = jurySQLDAO;
-        //    this.authProvider = authProvider;
-        //}
+        public HomeController(IAuthProvider authProvider, JurySQLDAO jurySQLDAO)
+        {
+            this.jurySQLDAO = jurySQLDAO;
+            this.authProvider = authProvider;
+        }
 
         [HttpGet]
         public IActionResult Index()
         {
-            
+
             return View();
         }
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
-
             return View();
         }
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
-
             return View();
         }
 
