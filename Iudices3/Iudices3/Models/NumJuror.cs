@@ -10,5 +10,7 @@ namespace Iudices3.Models
         public int numberOfJurors { get; set; }
         
         public int zipcode { get; set; }
+
+        
     }
 }

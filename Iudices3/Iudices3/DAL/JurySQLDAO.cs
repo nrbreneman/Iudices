@@ -58,13 +58,7 @@ namespace Iudices3.DAL
 
                     while (reader.Read())
                     {
-                        juror.ID = Convert.ToInt32(reader["rosterID"]);
-                        juror.firstName = Convert.ToString(reader["firstName"]);
-                        juror.lastName = Convert.ToString(reader["lastName"]);
-                        juror.streetAddress = Convert.ToString(reader["streetAddress"]);
-                        juror.city = Convert.ToString(reader["city"]);
-                        juror.state = Convert.ToString(reader["stateABV"]);
-                        juror.zipcode = Convert.ToInt32(reader["zipcode"]);
+                        juror = (MapRowToJuror(reader));
 
                     }
                 }
@@ -76,5 +70,22 @@ namespace Iudices3.DAL
                 throw ex;
             }
         }
+
+        private Juror MapRowToJuror(SqlDataReader reader)
+        {
+            Juror juror = new Juror
+            {
+                ID = Convert.ToInt32(reader["rosterID"]),
+                firstName = Convert.ToString(reader["firstName"]),
+                lastName = Convert.ToString(reader["lastName"]),
+                streetAddress = Convert.ToString(reader["streetAddress"]),
+                city = Convert.ToString(reader["city"]),
+                state = Convert.ToString(reader["stateABV"]),
+                zipcode = Convert.ToInt32(reader["zipcode"]),
+            };
+
+            return juror;
+        }
     }
 }
+

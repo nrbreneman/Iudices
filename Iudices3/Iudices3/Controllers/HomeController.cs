@@ -12,15 +12,6 @@ namespace Iudices3.Controllers
 {
     public class HomeController : Controller
     {
-        private JurySQLDAO jurySQLDAO;
-        private IAuthProvider authProvider;
-
-        public HomeController(IAuthProvider authProvider, JurySQLDAO jurySQLDAO)
-        {
-            this.jurySQLDAO = jurySQLDAO;
-            this.authProvider = authProvider;
-        }
-
         [HttpGet]
         public IActionResult Index()
         {
