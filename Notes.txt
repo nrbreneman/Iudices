@@ -2,12 +2,24 @@ Need to be able to seperate each juror by either zip code or state. Should we so
 and only have it search the database related to that state or should we import everyone from that state 
 to a list and sort for there?
 
-
-Auth provider still needs made.
-
 Privacy Policy 
 
 new email address 
 
-Create Landing page for log in behind secure fire wall//done 
+Create SQL User and Admin databases
 
+Admin:
+Create Admin
+Create User
+Delete User
+Create Juror Record 
+Delete Juror Record 
+Update Juror Record 
+
+User:
+Update Password
+Update Email 
+
+Done:
+Create Landing page for log in 
+Auth provider still needs mad
