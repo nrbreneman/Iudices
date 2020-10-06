@@ -17,7 +17,7 @@ namespace Iudices3.Controllers
         }
 
         [HttpGet]
-        [AuthorizationFilter("User")]
+/*        [AuthorizationFilter("User")]*/
         public IActionResult GetNumber()
         {
             NumJuror model = new NumJuror();
@@ -25,14 +25,14 @@ namespace Iudices3.Controllers
         }
 
         [HttpPost]
-        [AuthorizationFilter("User")]
+        //[AuthorizationFilter("User")]
         public IActionResult GetNumber(NumJuror model)
         {
             return RedirectToAction("ListPool", model);
         }
 
         [HttpGet]
-        [AuthorizationFilter("User")]
+        //[AuthorizationFilter("User")]
         public IActionResult ListPool(NumJuror model)
         {
 
